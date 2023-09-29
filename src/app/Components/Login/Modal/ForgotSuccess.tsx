@@ -8,21 +8,21 @@ type props = {
 };
 export default function ModalSuccess({ show, onClick }: props) {
   return (
-    <>
+    <div className="w-full h-full mt-[2rem]">
       {show && (
-        <>
+        <div className="h-full w-full flex flex-col gap-4 justify-center items-center content-center">
           <TextSend />
 
-          <div className="w-[356px] flex justify-end mb-[80px]">
+          <div className="w-full flex justify-end">
             <button
               onClick={onClick}
-              className="mt-[52px] w-[136px] h-[136px] rounded-2xl bg-red-600 grid place-content-center"
+              className="w-[8rem] h-[8rem] rounded-2xl bg-red-600 grid place-content-center"
             >
               <IconCheck width={80} height={80} className="w-200" />
             </button>
           </div>
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 }

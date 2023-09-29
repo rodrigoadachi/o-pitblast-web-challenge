@@ -18,16 +18,10 @@ export default function Home() {
     },
     errorPolicy: "all",
   });
-  if (error) console.log({ error });
 
   useEffect(() => {
     setMenuShow(!modalShow);
   }, [modalShow, setMenuShow]);
-
-  useEffect(() => {
-    console.log(data?.user);
-    console.log({ goodField: data?.goodField });
-  }, [data]);
 
   return (
     <>

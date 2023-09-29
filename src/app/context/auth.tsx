@@ -87,8 +87,8 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     setForgotSuccess(false);
   };
 
-  const clearError = () => {
-    setForgotError(null);
+  const clearError = async () => {
+    await setForgotError(null);
   };
 
   const logout = async () => {

@@ -22,15 +22,15 @@ export default function ModalLogin({
   return (
     <>
       {show && (
-        <>
-          <div className="mt-10 flex flex-col w-full h-full top-16 text-primary-gray text-left text-base font-normal leading-5 tracking-normal text-gray-500">
+        <div className="h-full w-full grid grid-cols-auto justify-center">
+          <div className="mt-[1rem] flex flex-col w-full h-full top-16 text-primary-gray text-left text-base font-normal leading-5 tracking-normal text-gray-500">
             {!error && <TextWelcome />}
             {error && <TextOps />}
           </div>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="mt-10 flex flex-col gap-y-5"
+            className="mt-[1rem] flex flex-col gap-y-2"
           >
             <InputLabel
               label="E-mail or Username"
@@ -57,22 +57,20 @@ export default function ModalLogin({
               your password?
             </div>
 
-            <div className="w-full flex justify-end">
-              <div className="w-1/3 flex flex-col">
-                <button className="mt-[1rem] w-full h-[7rem] rounded-2xl bg-red-600 grid place-content-center">
+            <div className="w-full h-full flex justify-end">
+              <div className="w-[5rem] h-full flex flex-col">
+                <button className="mt-[1rem] w-[5rem] h-[6rem] rounded-2xl bg-red-600 grid place-content-center">
                   <IconCheck width={50} height={50} />
                 </button>
 
-                <div className="mt-4 w-full h-1/4 flex flex-rol gap-x-1 text-center text-red-600 font-bold italic">
-                  <span className="w-[64px]">
-                    {!!error && <>wrong login</>}
-                  </span>
-                  <span className="w-[64px]">{!!error && <>fail login</>}</span>
+                <div className="mt-4 w-fuBom diall h-1/4 flex flex-rol gap-x-1 text-sm text-center text-red-600 font-bold italic">
+                  <span className="w-[1/2]">{!!error && <>wrong login</>}</span>
+                  <span className="w-[1/2]">{!!error && <>fail login</>}</span>
                 </div>
               </div>
             </div>
           </form>
-        </>
+        </div>
       )}
     </>
   );

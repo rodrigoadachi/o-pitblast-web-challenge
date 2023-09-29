@@ -30,15 +30,14 @@ export default function Home() {
   }, [setUser]);
 
   useEffect(() => {
-    if (error) console.log({ error });
     if (error !== "Invalid user or password") {
       setFailure(error);
     } else setFailure(undefined);
   }, [error]);
-
-  useEffect(() => {
-    if (forgotError) console.log({ forgotError });
-  }, [forgotError]);
+  const clearAllError = async () => {
+    await clearError();
+    setFailure(undefined);
+  };
 
   return (
     <div
@@ -49,51 +48,49 @@ export default function Home() {
       <div
         className="
           rounded-3xl bg-white
-          h-75vh w-33vw p-10 pt-20
+          h-[75vh] w-[33vw] p-10 pt-10
           shadow-xl ackdrop-blur-md backdrop-filter backdrop-blur-8 flex flex-col items-center justify-between"
       >
-        <div className="flex flex-col w-full h-full">
-          <Logo />
+        <Logo />
 
-          <ModalLogin
-            show={
-              !forgot &&
-              !loading &&
-              !failure &&
-              !forgotError &&
-              !forgotSuccess &&
-              !user
-            }
-            error={error}
-            onSubmit={setLogin}
-            setForgot={setForgot}
-          />
+        <ModalLogin
+          show={
+            !forgot &&
+            !loading &&
+            !failure &&
+            !forgotError &&
+            !forgotSuccess &&
+            !user
+          }
+          error={error}
+          onSubmit={setLogin}
+          setForgot={setForgot}
+        />
 
-          <ModalForgot
-            show={forgot && !forgotSuccess && !forgotError && !user && !loading}
-            onSubmit={forgetPassword}
-            error={error}
-            setForgot={setForgot}
-          />
+        <ModalForgot
+          show={forgot && !forgotSuccess && !forgotError && !user && !loading}
+          onSubmit={forgetPassword}
+          error={error}
+          setForgot={setForgot}
+        />
 
-          <ModalSuccess
-            show={forgotSuccess}
-            onClick={() => {
-              setForgot(false);
-            }}
-          />
+        <ModalSuccess
+          show={forgotSuccess}
+          onClick={() => {
+            setForgot(false);
+          }}
+        />
 
-          <CardLoging show={loading && !forgotError} />
+        <CardLoging show={loading && !forgotError} />
 
-          <CardSuccess show={!!user} />
+        <CardSuccess show={!!user} />
 
-          <ModalFailure
-            show={!!failure || !!forgotError}
-            onClick={() => clearError()}
-            failure={failure}
-            forgotError={forgotError}
-          />
-        </div>
+        <ModalFailure
+          show={!!failure || !!forgotError}
+          onClick={() => clearAllError()}
+          failure={failure}
+          forgotError={forgotError}
+        />
       </div>
     </div>
   );

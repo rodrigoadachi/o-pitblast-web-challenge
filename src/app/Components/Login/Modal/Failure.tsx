@@ -15,16 +15,16 @@ export default function ModalFailure({
   forgotError,
 }: props) {
   return (
-    <>
+    <div className="w-full h-full">
       {show && (
         <div
           onClick={onClick}
-          className="flex flex-col gap-y-[35px] items-center justify-center cursor-pointer"
+          className="h-full w-full flex flex-col gap-4 justify-center items-center content-center cursor-pointer"
         >
           <CardExclamation />
-          <TextFailure message={`[${failure || forgotError}`} />
+          <TextFailure message={`[${failure || forgotError}]`} />
         </div>
       )}
-    </>
+    </div>
   );
 }
