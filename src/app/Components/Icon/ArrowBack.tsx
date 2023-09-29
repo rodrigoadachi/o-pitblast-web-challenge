@@ -2,8 +2,8 @@ import { MouseEventHandler } from "react";
 
 interface iIcon {
   color?: string;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   className?: string;
   onClick?: MouseEventHandler<SVGSVGElement>;
 }

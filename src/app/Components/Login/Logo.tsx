@@ -1,5 +1,5 @@
 import Image from "next/image";
-export default function Logo({ width }: { width?: number }) {
+export default function Logo({ width }: { width?: number | string }) {
   return (
     <Image
       src="/layout/logo.png"

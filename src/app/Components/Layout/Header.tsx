@@ -54,7 +54,7 @@ export default function Header() {
                     bg-gray-100 hover:bg-white
                     text-black hover:text-black
                     font-bold text-xl text-center
-                    hover:rounded-xl
+                    rounded-xl hover:rounded-xl
                     hover:shadow-lg
                     cursor-pointer
                     px-4 h-[100%]
