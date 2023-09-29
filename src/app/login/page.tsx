@@ -27,12 +27,12 @@ export default function Home() {
   useEffect(() => {
     window.localStorage.clear();
     setUser(null);
-  }, []);
+  }, [setUser]);
 
   useEffect(() => {
     if (error) console.log({ error });
     if (error !== "Invalid user or password") {
-      setFailure(error?.message!);
+      setFailure(error);
     } else setFailure(undefined);
   }, [error]);
 

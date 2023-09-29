@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
-import { handleNetworkError } from "../functions/handleNetworkError";
 
 const httpLink = createHttpLink({
   uri: process.env.BASE_URL,
@@ -18,9 +17,7 @@ const withToken = setContext((_, { headers }) => {
   };
 });
 
-const resetToken = onError(({ networkError }) => {
-  // handleNetworkError(networkError)
-});
+const resetToken = onError(({ networkError }) => {});
 
 const authFlowLink = withToken.concat(resetToken);
 

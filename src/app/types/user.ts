@@ -1,4 +1,4 @@
-interface iUser {
+export type iUser = {
   _id?: string;
   companies: any;
   type?: string;
@@ -12,23 +12,23 @@ interface iUser {
   associatedOPITStaffUserId?: string;
   licences: any;
   devices: any;
-}
+};
 
-interface iUserlogin {
+export type iUserlogin = {
   email: string;
   password: string;
-}
+};
 
-interface iAuthReturn {
+export type iAuthReturn = {
   jwt: string;
   user: iUser;
-}
+};
 
-interface iAuth {
+export type iAuth = {
   jwt: string | undefined;
   userId: string | undefined;
-}
+};
 
-interface iForgot {
+export type iForgot = {
   email?: string | undefined;
-}
+};

@@ -9,13 +9,8 @@ import {
 } from "react";
 import { useMutation } from "@apollo/client";
 import { QUERY_LOGIN, QUERY_FORGOT } from "../../query/auth";
-import {
-  AuthContextProps,
-  iUserlogin,
-  iForgot,
-  iAuth,
-  iAuthReturn,
-} from "../types/auth";
+import { AuthContextProps } from "../types/auth";
+import { iUserlogin, iForgot, iAuth, iAuthReturn } from "../types/user";
 
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 
@@ -81,8 +76,10 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       });
       return { data };
     } catch (err) {
-      setForgotError(err?.message!);
-      return err?.message;
+      if (err instanceof Error) {
+        setForgotError(err.message);
+        return err.message;
+      }
     }
   };
 

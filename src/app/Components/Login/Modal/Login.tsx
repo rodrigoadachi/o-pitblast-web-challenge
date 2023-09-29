@@ -8,7 +8,7 @@ import { FieldValues, UseFormRegister, useForm } from "react-hook-form";
 type props = {
   show: boolean;
   error: string | undefined;
-  onSubmit: (user: iUserlogin) => void;
+  onSubmit: any;
   setForgot: Dispatch<SetStateAction<boolean>>;
 };
 export default function ModalLogin({

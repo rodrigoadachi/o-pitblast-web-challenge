@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { iAuth, iForgot, iUserlogin } from "./user";
 
 export type AuthContextProps = {
   user: iAuth | null;
