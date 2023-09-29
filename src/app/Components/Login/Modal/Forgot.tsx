@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import IconSend from "../../Icon/Send";
 import IconArrowBack from "../../Icon/ArrowBack";
 import { TextToReset } from "../TextToReset";
+import { iForgot } from "@/app/types/user";
 
 type props = {
   show: boolean;
