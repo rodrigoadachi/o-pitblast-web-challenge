@@ -1,3 +1,4 @@
+import { iUser } from "@/app/types/user";
 import { ListTitleData } from "../Text/ListTitleData";
 
 export const CardData = ({ user }: { user?: iUser }) => {

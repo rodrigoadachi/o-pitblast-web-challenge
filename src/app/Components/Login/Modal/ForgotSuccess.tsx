@@ -1,9 +1,4 @@
-import {
-  Dispatch,
-  FormEventHandler,
-  MouseEventHandler,
-  SetStateAction,
-} from "react";
+import { MouseEventHandler } from "react";
 import { TextSend } from "../TextSend";
 import IconCheck from "../../Icon/Check";
 

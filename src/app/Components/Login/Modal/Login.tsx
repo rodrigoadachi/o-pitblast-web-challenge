@@ -1,9 +1,9 @@
-import { Dispatch, FormEventHandler, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { InputLabel } from "../../Form/InputLabel";
 import IconCheck from "../../Icon/Check";
 import { TextOps } from "../TextOps";
 import { TextWelcome } from "../TextWelcome";
-import { FieldValues, UseFormRegister, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 type props = {
   show: boolean;
