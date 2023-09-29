@@ -8,7 +8,6 @@ export default function Logo({ width }: { width?: number }) {
       height={0}
       sizes="100vw"
       style={{ width: width || "429px", height: "auto" }}
-      className="mt-[133px]"
     />
   );
 }

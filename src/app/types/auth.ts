@@ -8,6 +8,7 @@ export type AuthContextProps = {
   logout: () => void;
   loading: boolean;
   error: string | undefined;
+  setError: Dispatch<SetStateAction<string | undefined>>;
   forgotSuccess: boolean;
   clearSuccess: () => void;
   forgotError: string | null;
